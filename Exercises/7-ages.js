@@ -1,6 +1,4 @@
 'use strict';
-
-const ages = (persons) => {
   // Use for..in to calculate age for each person
   // For example ages({
   //   lenin: { born: 1870, died: 1924 },
@@ -14,6 +12,14 @@ const ages = (persons) => {
   //   gandhi: 79,
   //   hirohito: 88,
   // }
+
+const ages = (persons) => {
+  let list = {};
+  for (const values in persons){
+    const name = persons[values];
+    list[values] = name.died - name.born;
+  }
+  return list;
 };
 
 module.exports = { ages };
